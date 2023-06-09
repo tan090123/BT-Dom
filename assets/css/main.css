@@ -1,0 +1,208 @@
+@import "https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap";
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  font-size: 1.6rem;
+  background: -webkit-gradient(linear, left top, right bottom, from(#ffb88e), to(#ea5753));
+  background: linear-gradient(to right bottom, #ffb88e, #ea5753);
+  background-size: cover;
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+  padding-left: 5px;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 3rem;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: relative;
+  border-radius: 3rem;
+  background: -webkit-gradient(linear, left top, right bottom, from(rgba(255, 184, 142, 0.44)), to(rgba(255, 255, 255, 0.5)));
+  background: linear-gradient(to right bottom, rgba(255, 184, 142, 0.44), rgba(255, 255, 255, 0.5));
+  width: 125rem;
+  height: 50rem;
+}
+
+.container::-webkit-scrollbar {
+  width: 0;
+}
+
+.container::before {
+  content: "";
+  top: -10rem;
+  left: -10rem;
+  width: 40rem;
+  height: 40rem;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.container::after {
+  content: "";
+  bottom: 0rem;
+  right: -10rem;
+  width: 40rem;
+  height: 40rem;
+  margin-bottom: -25rem;
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 185, 142, 0.6);
+}
+
+.container h1 {
+  position: sticky;
+  top: 0;
+  margin: 0;
+  padding: 6rem 0;
+  width: 30rem;
+  left: 0;
+  padding-top: 7rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 3rem;
+  -webkit-box-shadow: 0 7px 2rem #ea5753;
+  box-shadow: 0 7px 2rem #ea5753;
+  text-wrap: balance;
+  background: rgba(234, 87, 83, 0.7);
+  margin-right: 5rem;
+}
+
+.container ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  height: 48rem;
+  margin: 0;
+  gap: 1rem;
+  padding: 0;
+  list-style: none;
+  place-items: center;
+  flex-direction: column;
+  counter-reset: my-counter;
+  margin-right: 2rem;
+}
+
+.container ul li {
+  width: 20rem;
+  height: 5rem;
+  text-align: start;
+  color: #fff;
+  border-radius: 3rem;
+  background: rgba(234, 87, 83, 0.7);
+  counter-increment: my-counter;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 1rem;
+  font-size: 1.45rem;
+}
+.container ul li:hover {
+  opacity: 0.8;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.container ul li::before {
+  content: counter(my-counter);
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-size: 1.4rem;
+  }
+  .container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    padding: 2rem;
+    height: auto;
+    width: auto;
+    border-radius: 0;
+  }
+  .container::before,
+  .container::after {
+    display: none;
+  }
+  h1 {
+    position: static;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    padding: 3rem 5rem !important;
+    width: auto;
+    text-align: left;
+    margin-right: 0 !important;
+  }
+  ul {
+    height: 30rem !important;
+    margin-right: 0;
+    width: 100%;
+    overflow-x: scroll;
+  }
+  ul li {
+    width: 15rem !important;
+    text-wrap: balance;
+  }
+}

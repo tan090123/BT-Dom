@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background-image: linear-gradient(45deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100%);
+  background-size: cover;
+}
+
+.register {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+form {
+  background-color: #fff;
+  padding: 2rem 4rem;
+  border-radius: 4px;
+  width: 40rem;
+  height: 90%;
+}
+form h2 {
+  text-align: center;
+  padding: 2rem 0;
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+form .form-control {
+  padding-bottom: 8rem;
+  height: 7rem;
+}
+form .form-control input {
+  width: 100%;
+  height: 4rem;
+  font-size: 1.6rem;
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: 2px solid #adadad;
+}
+form .form-control input::-webkit-input-placeholder {
+  letter-spacing: 1.15px;
+}
+form .form-control input::-moz-placeholder {
+  letter-spacing: 1.15px;
+}
+form .form-control input:-ms-input-placeholder {
+  letter-spacing: 1.15px;
+}
+form .form-control input::-ms-input-placeholder {
+  letter-spacing: 1.15px;
+}
+form .form-control input::placeholder {
+  letter-spacing: 1.15px;
+}
+form .form-control span {
+  color: red;
+}
+form .form-control span::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #2691d9;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+form input[type=submit] {
+  margin-bottom: 2rem;
+  width: 100%;
+  height: 5rem;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+form input[type=submit]:hover {
+  background-color: #08609a;
+}
+form .register_link {
+  text-align: center;
+}
+form .register_link a {
+  color: #2691d9;
+}
