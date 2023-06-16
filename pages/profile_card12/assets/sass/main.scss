@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    font-size: 1.6rem;
+    background-image: linear-gradient(90deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 50%, rgb(255, 204, 112) 100%);
+    background-size: cover;
+}
+.profile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+
+    h2 {
+        color: #fff;
+        margin-top: 5rem;
+    }
+
+    p {
+        color: #f2726a;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .card {
+        width: 30rem;
+        height: 40rem;
+        border-radius: 10px;
+        text-align: center;
+        background-color: #242628;
+        overflow: hidden;
+        margin: 0 3rem;
+
+        &__img {
+            width: 120px;
+            height: 120px;
+            overflow: hidden;
+            transition: 0.25s;
+            margin: 0 auto;
+            transform: translateY(25px);
+            transition: all 0.3s ease-in-out;
+            border-radius: 50%;
+            border: 4px solid #f2726a;
+            cursor: pointer;
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+
+            &:hover {
+                width: 100%;
+                height: 100%;
+                border-radius: unset;
+                border: unset;
+                transform: unset;
+            }
+        }
+
+         &__social {
+        
+        a {
+            text-decoration: none;
+            color: white;
+            margin: 25px 20px 40px;
+            display: inline-block;
+            font-size: 18px;
+            transition: 0.25s;
+
+            &:hover {
+                color: #f2726a;
+            }
+        }
+    }
+
+    button {
+        outline: none;
+        border: none;
+        color: white;
+        background-color: transparent;
+        border: 1px solid #f2726a;
+        padding: 10px 20px;
+        border-radius: inherit;
+        cursor: pointer;
+        transition: 0.25s;
+
+        &:hover {
+            background-color: #f2726a;
+        }
+    }
+    }
+}
