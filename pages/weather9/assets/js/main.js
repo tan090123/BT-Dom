@@ -21,8 +21,8 @@ function changeWeatherUI(weather) {
 
   const temp = Math.round(weather.main.temp);
   temperature.innerHTML = temp;
-
-  temp >= 18 ? (document.body.className = 'hot') : (document.body.className = 'cold');
+  const app = $('#app');
+  temp >= 18 ? (app.className = 'hot') : (app.className = 'cold');
 
   visibility.innerHTML = weather.visibility + ' (m)';
   wind.innerHTML = weather.wind.speed + ' (m/s)';

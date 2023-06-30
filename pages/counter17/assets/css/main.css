@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#e661e2), to(#c469ef));
+  background-image: linear-gradient(to right, #e661e2, #c469ef);
+  background-size: cover;
+}
+
+.counter {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+}
+.counter .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.counter__facebook, .counter__youtube, .counter__tiktok {
+  background-color: #6b38b6;
+  margin: 3rem;
+  width: 30rem;
+  padding: 5rem 0;
+  color: #fff;
+  text-align: center;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.counter__facebook h2, .counter__youtube h2, .counter__tiktok h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #7adeef;
+}
+.counter__facebook p, .counter__youtube p, .counter__tiktok p {
+  font-size: 3.5rem;
+  font-weight: bold;
+}

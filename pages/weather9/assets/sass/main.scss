@@ -20,8 +20,23 @@ body {
     justify-content: center;
     height: 100vh;
     overflow: hidden;
+}
+
+#app.hot {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
         url('../images/bgc.png') no-repeat center/cover;
+
+        .weather {
+            background-image: url('../images/bgc.png');
+        }
+}
+
+#app.cold {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 1)),
+		url('../images/cold.png') no-repeat center/cover;
+    .weather {
+        background-image: url('../images/cold.png');
+    }
 }
 
 .weather {
@@ -32,7 +47,7 @@ body {
     padding: 3rem 2rem;
     border-radius: 1rem;
     transition: 0.4s;
-    background-image: url('../images/bgc.png');
+
 
     input {
         padding: 1rem 2rem;

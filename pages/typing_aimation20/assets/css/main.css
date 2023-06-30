@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ea76c2), to(#e65fdd));
+  background-image: linear-gradient(to right, #ea76c2, #e65fdd);
+  background-size: cover;
+}
+
+.animation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  font-family: monospace;
+  margin: 0 2rem;
+}
+.animation p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 70px;
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: typing 10s steps(30) infinite, blink 1s infinite;
+          animation: typing 10s steps(30) infinite, blink 1s infinite;
+}
+
+@-webkit-keyframes typing {
+  0%, 100% {
+    width: 0%;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+
+@keyframes typing {
+  0%, 100% {
+    width: 0%;
+  }
+  70%, 90% {
+    width: 100%;
+  }
+}
+@-webkit-keyframes blink {
+  0%, 100% {
+    border-right: 10px solid transparent;
+  }
+  50% {
+    border-right: 10px solid #fff;
+  }
+}
+@keyframes blink {
+  0%, 100% {
+    border-right: 10px solid transparent;
+  }
+  50% {
+    border-right: 10px solid #fff;
+  }
+}

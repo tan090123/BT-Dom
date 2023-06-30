@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  font-size: 1.6rem;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+.zoom {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+}
+.zoom.start {
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+  -webkit-transform: unset;
+          transform: unset;
+}
+
+.full-height {
+  height: 100vh;
+}
+
+.left-to-right {
+  -webkit-transform: translateX(-150%);
+          transform: translateX(-150%);
+}
+.left-to-right.start {
+  -webkit-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+.right-to-left {
+  -webkit-transform: translateX(150%);
+          transform: translateX(150%);
+}
+.right-to-left.start {
+  -webkit-transition: 0.7s ease-in-out;
+  transition: 0.7s ease-in-out;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+}
+
+#home {
+  background-image: -webkit-gradient(linear, left top, right top, from(#4daf54), to(#3d8880));
+  background-image: linear-gradient(to right, #4daf54, #3d8880);
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-left: 80px;
+}
+#home h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+#home p {
+  font-size: 20px;
+  width: 700px;
+  -webkit-transition-delay: 0.2s;
+          transition-delay: 0.2s;
+}
+
+#about {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.box {
+  background-color: #242628;
+  width: 500px;
+  border-radius: 10px;
+  margin: 0 20px;
+  padding: 20px;
+  color: white;
+}
+.box h2 {
+  margin-bottom: 15px;
+}
+
+#team {
+  background-image: -webkit-gradient(linear, left top, right top, from(#4daf54), to(#3d8880));
+  background-image: linear-gradient(to right, #4daf54, #3d8880);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+#team .person {
+  width: 200px;
+  padding: 20px;
+  margin: 0 25px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 5px #2e363a;
+          box-shadow: 0 0 5px #2e363a;
+  border-radius: 10px;
+}
+#team .person h3 {
+  color: #017c2c;
+  font-size: 22px;
+  margin-bottom: 20px;
+}
