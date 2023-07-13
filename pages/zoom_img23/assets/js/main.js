@@ -1,57 +1,36 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const input = $('#todo-input');
-const ul = $('.todo-lists');
-const form = $('form');
+const zoom = $(".zoom");
+const wrapImg = $$(".zoom .zoom__image");
+const result = $(".zoom .result");
 
-const todo_list = JSON.parse(localStorage.getItem('todo-lists'));
+const size = 4;
 
-if (todo_list) {
-  todo_list.forEach((todo) => addTodo(todo));
-}
+wrapImg.forEach((item) => {
+  item.addEventListener("mousemove", function (e) {
+    result.classList.remove("hide");
 
-function addTodo(todo) {
-  const li = document.createElement('li');
+    const img = item.querySelector("img");
 
-  li.setAttribute('class', todo.completed ? 'completed' : '');
-  li.innerHTML = `
-        <span>${todo.text}</span>
-        <i class="fas fa-trash"></i>
-    `;
+    let x = (e.offsetX / this.offsetWidth) * 100;
+    let y = (e.offsetY / this.offsetHeight) * 100;
 
-  li.addEventListener('click', function () {
-    this.classList.toggle('completed');
-    updateTodos();
+    // move result
+    let posX = e.pageX - zoom.offsetLeft;
+    let posY = e.pageY - zoom.offsetTop;
+
+    result.style.cssText = `
+			background-image: url(${img.src});
+			background-size: ${img.width * size}px ${img.height * size}px;
+			background-position : ${x}% ${y}%;
+			left: ${posX}px;
+			top: ${posY}px;
+		`;
   });
 
-  li.querySelector('i').addEventListener('click', (e) => {
-    e.target.parentElement.remove();
-    updateTodos();
+  item.addEventListener("mouseleave", function (e) {
+    result.style = ``;
+    result.classList.add("hide");
   });
-
-  ul.appendChild(li);
-  updateTodos();
-}
-
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const text = input.value.trim();
-  text != '' ? addTodo({ text, completed: false }) : undefined;
-  input.value = '';
 });
-
-function updateTodos() {
-  const list = $$('li');
-
-  const todo_list = [];
-
-  list.forEach((item) => {
-    todo_list.push({
-      text: item.querySelector('span').innerHTML,
-      completed: item.classList.contains('completed'),
-    });
-  });
-
-  localStorage.setItem('todo_list', JSON.stringify(todo_list));
-}

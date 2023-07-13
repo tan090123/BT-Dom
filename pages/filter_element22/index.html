@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=       ">
-    <title>Product Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filter Element</title>
 
     <!-- Link awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -21,32 +21,39 @@
 
 <body>
     <div id="app">
-        <div class="card">
-            <div class="container">
-                <span class="like"><i class="fa fa-heart"></i></span>
+        <div class="container">
+            <div class="food-menu">
+                <button class="active" type-food="all">All food</button>
+                <button type-food="salad">Salad</button>
+                <button type-food="meat">Meat</button>
+                <button type-food="drinks">Drinks</button>
+                <button type-food="dessert">Dessert</button>
+            </div>
 
-                <span class="cart"><i class="fa fa-cart-plus"></i></span>
-                <div class="card__img">
-                    <img src="./assets/images/Nike Zoom KD 12.png" alt="" />
+            <div class="food-list">
+                <div class="food-item" type-food="meat">
+                    <img src="./assets/images/meat1.jpg" alt="1" />
                 </div>
-                <h2 class="card__title">Nike Zoom KD 12</h2>
-                <p class="card__price">$99</p>
-                <div class="card__size">
-                    <h3>Size:</h3>
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
+                <div class="food-item" type-food="meat">
+                    <img src="./assets/images/meat2.jpg" alt="2" />
                 </div>
-                <div class="card__color">
-                    <h3>Color:</h3>
-                    <span class="green"></span>
-                    <span class="red"></span>
-                    <span class="black"></span>
+                <div class="food-item" type-food="drinks">
+                    <img src="./assets/images/drinks1.jpg" alt="3" />
                 </div>
-                <div class="card__action">
-                    <button>Buy now</button>
-                    <button>Add cart</button>
+                <div class="food-item" type-food="drinks">
+                    <img src="./assets/images/drinks2.jpg" alt="4" />
+                </div>
+                <div class="food-item" type-food="drinks">
+                    <img src="./assets/images/drinks3.jpg" alt="5" />
+                </div>
+                <div class="food-item" type-food="salad">
+                    <img src="./assets/images/salad1.jpg" alt="6" />
+                </div>
+                <div class="food-item" type-food="salad">
+                    <img src="./assets/images/salad2.jpg" alt="7" />
+                </div>
+                <div class="food-item" type-food="dessert">
+                    <img src="./assets/images/dessert1.jpg" alt="8" />
                 </div>
             </div>
         </div>

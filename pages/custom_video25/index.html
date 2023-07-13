@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=       ">
-    <title>Product Card</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom video</title>
 
     <!-- Link awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -21,32 +21,25 @@
 
 <body>
     <div id="app">
-        <div class="card">
-            <div class="container">
-                <span class="like"><i class="fa fa-heart"></i></span>
+        <div class="player">
+            <video class="player__video"
+                src="https://storage.googleapis.com/web-dev-assets/video-and-source-tags/chrome.mp4">
+            </video>
 
-                <span class="cart"><i class="fa fa-cart-plus"></i></span>
-                <div class="card__img">
-                    <img src="./assets/images/Nike Zoom KD 12.png" alt="" />
+            <div class="player__controls">
+                <button class="player__button toggle">
+                    <i class='fa fa-play'></i>
+                </button>
+                <p class="player__time"></p>
+                <div class="player__progress">
+                    <div class="player__progress__filled"></div>
                 </div>
-                <h2 class="card__title">Nike Zoom KD 12</h2>
-                <p class="card__price">$99</p>
-                <div class="card__size">
-                    <h3>Size:</h3>
-                    <span>6</span>
-                    <span>7</span>
-                    <span>8</span>
-                    <span>9</span>
-                </div>
-                <div class="card__color">
-                    <h3>Color:</h3>
-                    <span class="green"></span>
-                    <span class="red"></span>
-                    <span class="black"></span>
-                </div>
-                <div class="card__action">
-                    <button>Buy now</button>
-                    <button>Add cart</button>
+
+                <button data-skip="-10" class="player__button">«10s</button>
+                <button data-skip="10" class="player__button">10s»</button>
+                <div class="player__volume">
+                    <i class="fa fa-volume-up" aria-hidden="true"></i>
+                    <input type="range" min="0" max="1" step="0.05" value="0.5" />
                 </div>
             </div>
         </div>

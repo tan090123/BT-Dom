@@ -1,57 +1,36 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const input = $('#todo-input');
-const ul = $('.todo-lists');
-const form = $('form');
+const body = $('.wrapper');
+const SQUARES = 200;
 
-const todo_list = JSON.parse(localStorage.getItem('todo-lists'));
+for (let i = 0; i < SQUARES; i++) {
+  const square = document.createElement('div');
+  square.classList.add('square');
 
-if (todo_list) {
-  todo_list.forEach((todo) => addTodo(todo));
+  square.addEventListener('mouseover', () => setColor(square));
+
+  square.addEventListener('mouseout', () => removeColor(square));
+
+  body.appendChild(square);
 }
 
-function addTodo(todo) {
-  const li = document.createElement('li');
-
-  li.setAttribute('class', todo.completed ? 'completed' : '');
-  li.innerHTML = `
-        <span>${todo.text}</span>
-        <i class="fas fa-trash"></i>
-    `;
-
-  li.addEventListener('click', function () {
-    this.classList.toggle('completed');
-    updateTodos();
-  });
-
-  li.querySelector('i').addEventListener('click', (e) => {
-    e.target.parentElement.remove();
-    updateTodos();
-  });
-
-  ul.appendChild(li);
-  updateTodos();
+function setColor(element) {
+  const color = generateRandomColor();
+  element.style.background = color;
+  element.style.boxShadow = `0 0 10px ${color}, 0 0 100px ${color}`;
 }
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const text = input.value.trim();
-  text != '' ? addTodo({ text, completed: false }) : undefined;
-  input.value = '';
-});
+function removeColor(element) {
+  element.style.background = '#1d1d1d';
+  element.style.boxShadow = '0 0 2px #000';
+}
 
-function updateTodos() {
-  const list = $$('li');
-
-  const todo_list = [];
-
-  list.forEach((item) => {
-    todo_list.push({
-      text: item.querySelector('span').innerHTML,
-      completed: item.classList.contains('completed'),
-    });
-  });
-
-  localStorage.setItem('todo_list', JSON.stringify(todo_list));
+function generateRandomColor() {
+  let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }

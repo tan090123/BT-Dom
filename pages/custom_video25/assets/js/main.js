@@ -1,57 +1,63 @@
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
-const input = $('#todo-input');
-const ul = $('.todo-lists');
-const form = $('form');
+const player = $('.player');
+const video = $('.player__video');
+const progress = $('.player__progress');
+const progressBar = $('.player__progress__filled');
 
-const todo_list = JSON.parse(localStorage.getItem('todo-lists'));
+const toggle = $('.toggle');
+const skipButtons = $$('[data-skip]');
+const volume = $('.player__volume input');
+const time = $('.player__time');
 
-if (todo_list) {
-  todo_list.forEach((todo) => addTodo(todo));
+function togglePlay() {
+  if (video.paused) {
+    video.play();
+    toggle.innerHTML = "<i class='fa fa-pause'></i>";
+  } else {
+    video.pause();
+    toggle.innerHTML = "<i class='fa fa-play'></i>";
+  }
 }
 
-function addTodo(todo) {
-  const li = document.createElement('li');
+function handleProgress() {
+  const percent = (video.currentTime / video.duration) * 100;
+  progressBar.style.width = `${percent}%`;
 
-  li.setAttribute('class', todo.completed ? 'completed' : '');
-  li.innerHTML = `
-        <span>${todo.text}</span>
-        <i class="fas fa-trash"></i>
-    `;
-
-  li.addEventListener('click', function () {
-    this.classList.toggle('completed');
-    updateTodos();
-  });
-
-  li.querySelector('i').addEventListener('click', (e) => {
-    e.target.parentElement.remove();
-    updateTodos();
-  });
-
-  ul.appendChild(li);
-  updateTodos();
+  time.innerHTML = `${formatTime(video.currentTime)}/ ${formatTime(video.duration)}`;
 }
 
-form.addEventListener('submit', (e) => {
-  e.preventDefault();
-  const text = input.value.trim();
-  text != '' ? addTodo({ text, completed: false }) : undefined;
-  input.value = '';
+function scrub(e) {
+  const scrubTime = (e.offsetX / progress.offsetWidth) * video.duration;
+  video.currentTime = scrubTime;
+}
+
+video.addEventListener('click', togglePlay);
+toggle.addEventListener('click', togglePlay);
+
+video.addEventListener('timeupdate', handleProgress);
+
+skipButtons.forEach((button) =>
+  button.addEventListener('click', function () {
+    video.currentTime += +this.dataset.skip;
+  })
+);
+
+volume.addEventListener('change', function () {
+  video.volume = this.value;
 });
 
-function updateTodos() {
-  const list = $$('li');
+progress.addEventListener('click', scrub);
 
-  const todo_list = [];
+function formatTime(time) {
+  let minutes = Math.floor(time / 60);
+  let seconds = Math.floor(time - minutes * 60);
+  let minuteValue, secondValue;
 
-  list.forEach((item) => {
-    todo_list.push({
-      text: item.querySelector('span').innerHTML,
-      completed: item.classList.contains('completed'),
-    });
-  });
+  minuteValue = minutes < 10 ? '0' + minutes : minutes;
+  secondValue = seconds < 10 ? '0' + seconds : seconds;
 
-  localStorage.setItem('todo_list', JSON.stringify(todo_list));
+  let mediaTime = minuteValue + ':' + secondValue;
+  return mediaTime;
 }
